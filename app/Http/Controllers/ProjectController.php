@@ -11,14 +11,7 @@ class ProjectController extends Controller
 
     function index(){
         $products = DB::table('products')->limit(4)->get();
-
-        $men_products = DB::table('products')->where('type', 'men')->limit(4)->get();
-
-        $women_products = DB::table('products')->where('type', 'women')->limit(4)->get();
-
-        $accessories_products = DB::table('products')->where('type', 'accessories')->limit(4)->get();
-
-        return view('index',['products'=>$products, 'men_products'=>$men_products, 'women_products'=>$women_products, 'accessories_products'=>$accessories_products]);
+        return view('index',['products'=>$products]);
 
         
     }
@@ -26,7 +19,29 @@ class ProjectController extends Controller
 
     function products(){
 
-        $products = DB::table('products')->get();
+        $products = DB::table('products')->paginate(8);
         return view ('products',['products'=>$products]);
     }
+
+    function men(){
+
+        $products = DB::table('products')->where('type','men')->paginate(8);
+        return view ('products',['products'=>$products]);
+    }
+
+    function women(){
+
+        $products = DB::table('products')->where('type','women')->paginate(8);
+        return view ('products',['products'=>$products]);
+    }
+
+    function accessories(){
+
+        $products = DB::table('products')->where('type','accessories')->paginate(8);
+        return view ('products',['products'=>$products]);
+    }
+
+   
+
+   
 }

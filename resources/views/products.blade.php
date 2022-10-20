@@ -36,6 +36,11 @@
         @endforeach
     </div>
 
+    <div class="text-center">
+        {!! $products->links() !!}
+    </div>
+
+
 </section>
 
 <section id="banner" class="section-m1">

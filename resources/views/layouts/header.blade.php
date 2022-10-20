@@ -18,11 +18,10 @@
             <div>
                 <ul id="navbar">
                     <li><a  href="{{ url('/') }}">Home</a></li>
-                    <li><a  href="{{ url('/products') }}">Shop</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li id="lg-bag"><a href="cart.html"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></a></li>
+                    <li><a  href="{{ url('/men') }}">Mens</a></li>
+                    <li><a href="{{ url('/women') }}">Womens</a></li>
+                    <li><a href="{{ url('/accessories') }}">Accessories</a></li>
+                    <li id="lg-bag"><a href="{{ url('/cart') }}"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></a></li>
                     <a href="#" id="close"><i class="fa fa-times"></i></a>
                 </ul>
             </div>

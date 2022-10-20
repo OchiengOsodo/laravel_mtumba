@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProjectController;
 
 /*
@@ -22,3 +23,15 @@ Route::get('/single_product', function () {
     return view('single_product');
 });
 
+Route::get('/men',[ProjectController::class,"men"])->name('men');
+
+Route::get('/women',[ProjectController::class,"women"])->name('women');
+
+Route::get('/accessories',[ProjectController::class,"accessories"])->name('accessories');
+
+Route::get('/cart',[CartController::class,"cart"])->name('cart');
+
+Route::post('/add_to_cart',[CartController::class,"add_to_cart"])->name('add_to_cart');
+Route::get('/add_to_cart',function(){
+    return view('index');
+})
