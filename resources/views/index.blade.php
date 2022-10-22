@@ -65,13 +65,14 @@
                 @endif 
             </div>
             <form action="{{ route('add_to_cart') }}" method="POST">
+                @csrf 
                 <input type="hidden" name="id" value="{{ $product->id }}">
                 <input type="hidden" name="name" value="{{ $product->name }}">
                 <input type="hidden" name="image" value="{{ $product->image }}">
                 <input type="hidden" name="price" value="{{ $product->price }}">
                 <input type="hidden" name="quantity" value="1">
                 <input type="hidden" name="sale_price" value="{{ $product->sale_price }}">
-                <input type="submit" name=add_to_cart class="fa fa-cart-arrow-down cart">
+                <button type="submit" name="add_to_cart"><i class="fa fa-cart-arrow-down cart"></i></button>
             </form>
         </div>
 

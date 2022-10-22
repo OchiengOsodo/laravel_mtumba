@@ -34,4 +34,4 @@ Route::get('/cart',[CartController::class,"cart"])->name('cart');
 Route::post('/add_to_cart',[CartController::class,"add_to_cart"])->name('add_to_cart');
 Route::get('/add_to_cart',function(){
     return view('index');
-})
+});

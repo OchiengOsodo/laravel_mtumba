@@ -12,40 +12,53 @@
             <th>Quantity</th>
             <th>Subtotal</th>
         </tr>
-        <tr>
-            <td>
-                <div class="product-info">
-                    <img src="{{ asset('images/bhat1.jpg') }}" alt="">
-                <div>
-                    <p>Bucket Hat</p>
-                    <small><span>KSH</span>250</small>
-                    <br>
+
+        @if (Session::has('cart'))
+
+            @foreach (Session::get('cart') as $id=>$product )
+                
+
+            <tr>
+                <td>
+                    <div class="product-info">
+                        <img src="{{ asset('images/'.$product['image']) }}" alt="">
+                    <div>
+                        <p>{{ $product['name'] }}</p>
+                        <small><span>KSH</span>{{ $product['price'] }}</small>
+                        <br>
+                        <form>
+                            <input type="submit" name="" class="remove-btn" value="remove">
+                        </form>
+                    </div>
+                    </div>
+                </td>
+
+                <td>
                     <form>
-                        <input type="submit" name="" class="remove-btn" value="remove">
+                        <input type="number" name="" value="1">
+                        <input type="submit" value="edit" class="edit-btn" name="" id="">
                     </form>
-                </div>
-                </div>
-            </td>
+                </td>
 
-            <td>
-                <form>
-                    <input type="number" name="" value="1">
-                    <input type="submit" value="edit" class="edit-btn" name="" id="">
-                </form>
-            </td>
+                <td>
+                    <span class="product-price">KES {{ $product['quantity'] * $product['price'] }}</span>
+                </td>
 
-            <td>
-                <span class="product-price">KES250</span>
-            </td>
+            </tr>
 
-        </tr>
+            @endforeach
+
+        @endif
+
     </table>
     <div class="cart-total">
         <table>
+            @if(Session::has('total'))
             <tr>
                 <td>Total</td>
-                <td>250</td>
+                <td>KSH{{ Session::get('total') }}</td>
             </tr>
+            @endif
         </table>
     </div>
     <div class="checkout-container">
