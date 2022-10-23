@@ -8,6 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://kit.fontawesome.com/3e35fa2922.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+        <link href="{{asset('bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
        
         
     </head>

@@ -1041,3 +1041,57 @@ th:last child
 {
     color: #465b52;
 }
+
+/*Checkout */
+
+.checkout h2
+{
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+#checkout-form .checkout-small-element
+{
+    display: inline-block;
+    width: 48%;
+    margin: 10px auto;
+    font-size: 16px;
+}
+
+#checkout-form .checkout-small-element input 
+{
+    font-size: 16px;
+}
+
+#checkout-form .checkout-large-element input 
+{
+    font-size: 16px;
+}
+
+#checkout-form .checkout-btn-container
+{
+    margin: 10px;
+    text-align: right;
+    margin-right: 40px;
+    font-size: 20px;
+}
+
+#checkout-form .checkout-btn-container p 
+{
+    font-size: 16px;
+    margin: 15px 5px 5px 5px;
+    color: #088178;
+}
+
+#checkout-form #checkout-btn
+{
+    color: #000;
+    background: #088178;
+
+}
+
+#checkout-form #checkout-btn:hover 
+{
+    color: #000;
+    background:#088178;
+}

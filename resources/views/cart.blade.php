@@ -26,7 +26,9 @@
                         <p>{{ $product['name'] }}</p>
                         <small><span>KSH</span>{{ $product['price'] }}</small>
                         <br>
-                        <form>
+                        <form method="POST" action="{{ route('remove_from_cart') }}">
+                            @csrf
+                            <input type="hidden" name="id" value="{{ $product['id'] }}">
                             <input type="submit" name="" class="remove-btn" value="remove">
                         </form>
                     </div>
@@ -34,9 +36,11 @@
                 </td>
 
                 <td>
-                    <form>
-                        <input type="number" name="" value="1">
-                        <input type="submit" value="edit" class="edit-btn" name="" id="">
+                    <form method="POST" action="{{ route('edit_product_quantity') }}">
+                        @csrf
+                        <input type="number" name="quantity" value="{{ $product['quantity'] }}">
+                        <input type="hidden" name="id" value="{{ $product['id'] }}">
+                        <input type="submit" value="edit" class="edit-btn" name="edit_product_quantity_btn">
                     </form>
                 </td>
 
@@ -62,9 +66,16 @@
         </table>
     </div>
     <div class="checkout-container">
+        @if (Session::has('total'))
+        @if (Session::get('total') != null)
+  
         <form>
             <input type="submit" class="btn checkout-btn" value="Checkout" name="">
         </form>
+        
+        @endif  
+        @endif
+
     </div>
 
 </section>
