@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProjectController;
 
 /*
@@ -47,3 +48,12 @@ Route::get('/edit_product_quantity',function(){
 });
 
 Route::get('/checkout',[CartController::class,'checkout'])->name('checkout');
+
+
+Route::post('/place_order',[OrderController::class,"place_order"])->name('place_order');
+Route::get('/place_order',function(){
+    return redirect('/');
+});
+
+Route::get('/complete_payment',[OrderController::class,'complete_payment'])->name('complete_payment');
+

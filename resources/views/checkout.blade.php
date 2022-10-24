@@ -9,7 +9,8 @@
     </div>
 
     <div class="mx-auto container">
-        <form id="checkout-form" action="" method="POST">
+        <form id="checkout-form" action="{{ route('place_order') }}" method="POST">
+            @csrf
             <div class="form-group checkout-small-element">
                 <label for="">Name</label>
                 <input type="text" class="form-control" id="checkout_name" name="name" placeholder="name" required>
